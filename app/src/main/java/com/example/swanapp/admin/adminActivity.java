@@ -1,8 +1,10 @@
 package com.example.swanapp.admin;
 
+import static android.content.ContentValues.TAG;
+
 import android.os.Bundle;
 import android.view.MenuItem;
-
+import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -38,7 +40,7 @@ public class adminActivity extends AppCompatActivity {
 
 
         String token = getIntent().getStringExtra("TOKEN");
-
+        Log.d(TAG, "Logged in with token: " + token);
         Toast.makeText(this, "Logged in with token: " + token, Toast.LENGTH_SHORT).show();
 
         btnView = findViewById(R.id.bottom_navigation_admin);

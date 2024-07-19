@@ -33,10 +33,14 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
 
     @Override
     public void onBindViewHolder(@NonNull AttendanceViewHolder holder, int position) {
-
         AttendanceEntry attendanceEntry = attendanceList.get(position);
-        holder.textViewClockInTime.setText(attendanceEntry.getClockInTime());
-        holder.textViewClockOutTime.setText(attendanceEntry.getClockOutTime());
+
+        holder.textViewAttendanceId.setText(attendanceEntry.getId());
+        holder.textViewAttendanceUserId.setText(attendanceEntry.getUsername());
+        holder.textViewAttendanceEmail.setText(attendanceEntry.getEmail());
+        holder.textViewAttendanceDate.setText(attendanceEntry.getDate());
+        holder.textViewAttendanceLogin.setText(attendanceEntry.getLoginTime());
+        holder.textViewAttendanceLogout.setText(attendanceEntry.getLogoutTime());
     }
 
     @Override
@@ -44,20 +48,27 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
         return attendanceList.size();
     }
 
-
     public void setAttendanceList(List<AttendanceEntry> attendanceList) {
         this.attendanceList = attendanceList;
         notifyDataSetChanged();
     }
 
     public static class AttendanceViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewClockInTime;
-        TextView textViewClockOutTime;
+        TextView textViewAttendanceId;
+        TextView textViewAttendanceUserId;
+        TextView textViewAttendanceEmail;
+        TextView textViewAttendanceDate;
+        TextView textViewAttendanceLogin;
+        TextView textViewAttendanceLogout;
 
         public AttendanceViewHolder(View itemView) {
             super(itemView);
-            textViewClockInTime = itemView.findViewById(R.id.textViewClockInTime);
-            textViewClockOutTime = itemView.findViewById(R.id.Time);
+            textViewAttendanceId = itemView.findViewById(R.id.tvAttendanceId);
+            textViewAttendanceUserId = itemView.findViewById(R.id.tvAttendanceUserId);
+            textViewAttendanceEmail = itemView.findViewById(R.id.tvAttendanceEmail);
+            textViewAttendanceDate = itemView.findViewById(R.id.tvAttendanceDate);
+            textViewAttendanceLogin = itemView.findViewById(R.id.tvAttendanceLogin);
+            textViewAttendanceLogout = itemView.findViewById(R.id.tvAttendanceLogout);
         }
     }
 }

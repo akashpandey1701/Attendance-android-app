@@ -4,7 +4,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClientattendance {
 
-        private static final String BASE_URL = "http://192.168.139.151:8080/";
+        private static final String BASE_URL = "http://192.168.44.163:8080/";
 
         private static Retrofit retrofit = null;
 
